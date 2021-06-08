@@ -1,0 +1,227 @@
+﻿<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+
+    <changeSet author="carles (generated)" id="1">
+        <insert tableName="permission">
+            <column name="name" value="user"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="permission">
+            <column name="name" value="admin"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="2">
+        <insert tableName="user">
+            <column name="username" value="dani"/>
+            <column name="password" value="$2a$10$65f1jO3qjUf0karQmD45iemeB8Wc1ZydYgSsCFrTkal8WHfw2dUK6"/>
+            <column name="name" value="Dani"/>
+            <column name="surname" value="Donaire"/>
+            <column name="phone_number" value="639488379"/>
+            <column name="email" value="danigdonaire@gmail.com"/>
+            <column name="birthday_date" valueDate="current_timestamp"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user">
+            <column name="username" value="carles"/>
+            <column name="password" value="$2a$10$65f1jO3qjUf0karQmD45iemeB8Wc1ZydYgSsCFrTkal8WHfw2dUK6"/>
+            <column name="name" value="Carles"/>
+            <column name="surname" value="Saumell"/>
+            <column name="phone_number" value="627400818"/>
+            <column name="email" value="saumell19@gmail.com"/>
+            <column name="birthday_date" valueDate="current_timestamp"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user">
+            <column name="username" value="ionel"/>
+            <column name="password" value="$2a$10$65f1jO3qjUf0karQmD45iemeB8Wc1ZydYgSsCFrTkal8WHfw2dUK6"/>
+            <column name="name" value="Ionel"/>
+            <column name="surname" value="Duca"/>
+            <column name="phone_number" value="673000151"/>
+            <column name="email" value="ducaionelrobert@gmail.com"/>
+            <column name="birthday_date" valueDate="current_timestamp"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user">
+            <column name="username" value="adri"/>
+            <column name="password" value="$2a$10$65f1jO3qjUf0karQmD45iemeB8Wc1ZydYgSsCFrTkal8WHfw2dUK6"/>
+            <column name="name" value="Adria"/>
+            <column name="surname" value="Caballero"/>
+            <column name="phone_number" value="608815668"/>
+            <column name="email" value="adriael44@gmail.com "/>
+            <column name="birthday_date" valueDate="current_timestamp"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user">
+            <column name="username" value="gerard"/>
+            <column name="password" value="$2a$10$65f1jO3qjUf0karQmD45iemeB8Wc1ZydYgSsCFrTkal8WHfw2dUK6"/>
+            <column name="name" value="Gerard"/>
+            <column name="surname" value="Pujol"/>
+            <column name="phone_number" value="647583477"/>
+            <column name="email" value="gpujol97@gmail.com"/>
+            <column name="birthday_date" valueDate="current_timestamp"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="3">
+        <insert tableName="user_permission">
+            <column name="user_id" value="1"/>
+            <column name="permission_id" value="1"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="user_id" value="1"/>
+            <column name="permission_id" value="2"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="user_id" value="2"/>
+            <column name="permission_id" value="1"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="user_id" value="2"/>
+            <column name="permission_id" value="2"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="user_id" value="3"/>
+            <column name="permission_id" value="1"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="user_id" value="3"/>
+            <column name="permission_id" value="2"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="user_id" value="4"/>
+            <column name="permission_id" value="1"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="user_id" value="4"/>
+            <column name="permission_id" value="2"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="4">
+        <insert tableName="status">
+            <column name="name" value="Published"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="status">
+            <column name="name" value="Accepted"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="status">
+            <column name="name" value="Finished"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="5">
+        <insert tableName="category">
+            <column name="name" value="Sales"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="category">
+            <column name="name" value="Transports"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="category">
+            <column name="name" value="Cleaning"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+        <insert tableName="category">
+            <column name="name" value="Others"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="6">
+        <insert tableName="favour">
+            <column name="user_id" value="1"/>
+            <column name="category_id" value="1"/>
+            <column name="status_id" value="1"/>
+            <column name="ubication" value="{latitude: 41.223382, longitude: 1.697483}"/>
+            <column name="description" value="Formatear pc"/>
+            <column name="payed_date" value="2020-10-07"/>
+            <column name="limit_date" value="2021-02-07"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="7">
+        <insert tableName="favour">
+            <column name="user_id" value="2"/>
+            <column name="category_id" value="2"/>
+            <column name="status_id" value="2"/>
+            <column name="ubication" value="{latitude: 41.223382, longitude: 1.697483}"/>
+            <column name="description" value="perfiles spring boot"/>
+            <column name="payed_date" value="2020-10-07"/>
+            <column name="limit_date" value="2021-02-07"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="8">
+        <insert tableName="favour">
+            <column name="user_id" value="2"/>
+            <column name="category_id" value="2"/>
+            <column name="status_id" value="2"/>
+            <column name="ubication" value="{latitude: 41.223382, longitude: 1.697483}"/>
+            <column name="description" value="perfiles spring boot produccion"/>
+            <column name="payed_date" value="2020-10-07"/>
+            <column name="limit_date" value="2021-02-07"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="9">
+        <insert tableName="favour">
+            <column name="user_id" value="2"/>
+            <column name="category_id" value="2"/>
+            <column name="status_id" value="2"/>
+            <column name="ubication" value="{latitude: 41.223382, longitude: 1.697483}"/>
+            <column name="description" value="test local"/>
+            <column name="payed_date" value="2020-10-07"/>
+            <column name="limit_date" value="2021-02-07"/>
+            <column name="created_date" valueDate="current_timestamp"/>
+            <column name="updated_date" valueDate="current_timestamp"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>

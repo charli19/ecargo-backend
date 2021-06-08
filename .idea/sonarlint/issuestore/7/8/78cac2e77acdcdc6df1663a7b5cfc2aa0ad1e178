@@ -1,0 +1,6 @@
+
+`	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+›
+java:S1130$"„Remove the declaration of thrown exception 'org.springframework.security.core.AuthenticationException' which is a runtime exception.(ïÁ
+J
+java:S1068"/Remove this unused "userService" private field.(¶òÁÈùÿÿÿÿ

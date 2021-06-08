@@ -1,0 +1,7 @@
+
+[
+java:S4684B"@Replace this persistent entity with a simple POJO or DTO object.(£³¬ÿùÿÿÿÿ
+m
+java:S1128"RRemove this unused import 'org.springframework.web.bind.annotation.RequestMethod'.(Ê™Ðÿûÿÿÿÿ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

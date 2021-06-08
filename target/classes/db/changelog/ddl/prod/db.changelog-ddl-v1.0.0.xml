@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd"
+        logicalFilePath="db.changelog-ddl-v1.0.0.xml">
+
+    <changeSet author="carles (generated)" id="1">
+        <createTable tableName="user">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="PK__USER" nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="surname" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="birthday_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="biography" type="VARCHAR(500)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="2">
+        <createTable tableName="category">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="PK__CATEGORY"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="3">
+        <createTable tableName="status">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="PK__STATUS"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="4">
+        <createTable tableName="favour">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="PK__FAVOUR"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="worker_id" type="BIGINT"/>
+            <column name="category_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ubication" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payed_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="limit_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseColumnNames="user_id" baseTableName="favour"
+                constraintName="fk__user_id" referencedColumnNames="id"
+                referencedTableName="user"/>
+        <addForeignKeyConstraint
+                baseColumnNames="worker_id" baseTableName="favour"
+                constraintName="fk__worker_id" referencedColumnNames="id"
+                referencedTableName="user"/>
+        <addForeignKeyConstraint
+                baseColumnNames="category_id" baseTableName="favour"
+                constraintName="fk__category_id" referencedColumnNames="id"
+                referencedTableName="category"/>
+        <addForeignKeyConstraint
+                baseColumnNames="status_id" baseTableName="favour"
+                constraintName="fk__status_id" referencedColumnNames="id"
+                referencedTableName="status"/>
+    </changeSet>
+
+    <changeSet author="carles (generated)" id="5">
+        <createTable tableName="permission">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="PK__PERMISSION" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="carles (generated)" id="6">
+        <createTable tableName="user_permission">
+            <column name="user_id" type="BIGINT" />
+            <column name="permission_id" type="BIGINT" />
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_date" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseColumnNames="user_id" baseTableName="user_permission"
+                constraintName="PK__USER_ID" referencedColumnNames="id"
+                referencedTableName="user"/>
+        <addForeignKeyConstraint
+                baseColumnNames="permission_id" baseTableName="user_permission"
+                constraintName="PK__PERMISSION_ID" referencedColumnNames="id"
+                referencedTableName="permission"/>
+    </changeSet>
+</databaseChangeLog>

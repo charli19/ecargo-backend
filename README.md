@@ -1,2 +1,1 @@
-# ecargo
-Social application
+# ecargo-backend
